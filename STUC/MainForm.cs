@@ -4,12 +4,24 @@ namespace STUC
 {
     public partial class MainForm : Form
     {
-        private const string steamUrl = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
-        private const string csMarketUrl = @"https://market.csgo.com/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
+        private static string steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
+        private static string marketURL = @"https://market.csgo.com/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
         private Exception ex;
         public MainForm()
         {
             InitializeComponent();
+            dota2ToolStripMenuItem.Click += (s, e) =>
+            {
+                steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=570&market_hash_name=";
+                marketURL = @"https://market.dota2.net/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
+                label3.Text = "Öåíà íà DotaMarket";
+            };
+            csToolStripMenuItem.Click += (s, e) =>
+            {
+                steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
+                marketURL = @"https://market.csgo.com/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
+                label3.Text = "Öåíà íà CSMarket";
+            };
             tbItemName.KeyPress += (s, e) =>
             {
                 if (e.KeyChar == (char)Keys.Enter)
@@ -23,7 +35,7 @@ namespace STUC
         private async void btnCalculate_Click(object sender, EventArgs e)
         {
             string item = tbItemName.Text;
-            double csMarketPrice = await GetCSMarketPrice(item);
+            double csMarketPrice = await GetMarketPrice(item);
             double steamPrice = await GetSteamPrice(item);
             if (ex == null)
             {
@@ -39,7 +51,7 @@ namespace STUC
             ex = null;
         }
 
-        private async Task<double> GetCSMarketPrice(string item)
+        private async Task<double> GetMarketPrice(string item)
         {
             return await Task.Run(() =>
             {
@@ -48,7 +60,7 @@ namespace STUC
                     string response = "";
                     try
                     {
-                        response = client.GetStringAsync(csMarketUrl + item).Result;
+                        response = client.GetStringAsync(marketURL + item).Result;
                     }
                     catch (Exception e)
                     {
@@ -73,7 +85,7 @@ namespace STUC
                     string response = "";
                     try
                     {
-                        response = client.GetStringAsync(steamUrl + item).Result;
+                        response = client.GetStringAsync(steamURL + item).Result;
                     }
                     catch (Exception e)
                     {
