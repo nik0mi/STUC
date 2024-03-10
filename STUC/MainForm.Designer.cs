@@ -58,7 +58,7 @@
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(154, 54);
             btnCalculate.TabIndex = 0;
-            btnCalculate.Text = "Рассчитать";
+            btnCalculate.Text = "Calculate";
             btnCalculate.UseVisualStyleBackColor = true;
             btnCalculate.Click += btnCalculate_Click;
             // 
@@ -68,9 +68,9 @@
             lblRecomendPrice.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblRecomendPrice.Location = new Point(12, 130);
             lblRecomendPrice.Name = "lblRecomendPrice";
-            lblRecomendPrice.Size = new Size(128, 15);
+            lblRecomendPrice.Size = new Size(122, 15);
             lblRecomendPrice.TabIndex = 1;
-            lblRecomendPrice.Text = "Рекомендуемая цена*";
+            lblRecomendPrice.Text = "Recommended price*";
             // 
             // lblBonus
             // 
@@ -79,7 +79,7 @@
             lblBonus.Name = "lblBonus";
             lblBonus.Size = new Size(154, 15);
             lblBonus.TabIndex = 2;
-            lblBonus.Text = "Бонус:";
+            lblBonus.Text = "Bonus:";
             // 
             // label3
             // 
@@ -88,7 +88,7 @@
             label3.Name = "label3";
             label3.Size = new Size(154, 25);
             label3.TabIndex = 3;
-            label3.Text = "Цена на CSMarket";
+            label3.Text = "Price on CSMarket";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
@@ -98,7 +98,7 @@
             label4.Name = "label4";
             label4.Size = new Size(154, 25);
             label4.TabIndex = 4;
-            label4.Text = "Цена в Steam";
+            label4.Text = "Price on Steam";
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // label5
@@ -108,7 +108,7 @@
             label5.Name = "label5";
             label5.Size = new Size(154, 25);
             label5.TabIndex = 5;
-            label5.Text = "Продаж за сутки";
+            label5.Text = "Sales per day";
             label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // label6
@@ -118,7 +118,7 @@
             label6.Name = "label6";
             label6.Size = new Size(154, 25);
             label6.TabIndex = 6;
-            label6.Text = "Название предмета";
+            label6.Text = "Item name";
             label6.TextAlign = ContentAlignment.TopCenter;
             // 
             // label7
@@ -128,7 +128,7 @@
             label7.Name = "label7";
             label7.Size = new Size(154, 25);
             label7.TabIndex = 7;
-            label7.Text = "Итог";
+            label7.Text = "Total";
             label7.TextAlign = ContentAlignment.TopCenter;
             // 
             // tbItemName
@@ -209,26 +209,26 @@
             справкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { сменитьИгруToolStripMenuItem });
             справкаToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            справкаToolStripMenuItem.Size = new Size(65, 19);
-            справкаToolStripMenuItem.Text = "Справка";
+            справкаToolStripMenuItem.Size = new Size(44, 19);
+            справкаToolStripMenuItem.Text = "Help";
             // 
             // сменитьИгруToolStripMenuItem
             // 
             сменитьИгруToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { csToolStripMenuItem, dota2ToolStripMenuItem });
             сменитьИгруToolStripMenuItem.Name = "сменитьИгруToolStripMenuItem";
-            сменитьИгруToolStripMenuItem.Size = new Size(150, 22);
-            сменитьИгруToolStripMenuItem.Text = "Сменить игру";
+            сменитьИгруToolStripMenuItem.Size = new Size(148, 22);
+            сменитьИгруToolStripMenuItem.Text = "Change game";
             // 
             // csToolStripMenuItem
             // 
             csToolStripMenuItem.Name = "csToolStripMenuItem";
-            csToolStripMenuItem.Size = new Size(108, 22);
+            csToolStripMenuItem.Size = new Size(180, 22);
             csToolStripMenuItem.Text = "CS";
             // 
             // dota2ToolStripMenuItem
             // 
             dota2ToolStripMenuItem.Name = "dota2ToolStripMenuItem";
-            dota2ToolStripMenuItem.Size = new Size(108, 22);
+            dota2ToolStripMenuItem.Size = new Size(180, 22);
             dota2ToolStripMenuItem.Text = "Dota 2";
             // 
             // MainForm

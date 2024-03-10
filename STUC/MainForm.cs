@@ -1,9 +1,11 @@
 using Newtonsoft.Json.Linq;
+using System.Configuration;
 
 namespace STUC
 {
     public partial class MainForm : Form
     {
+        private static string API_KEY = ConfigurationManager.AppSettings.Get("API_KEY");
         private static string steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
         private static string marketURL = @"https://market.csgo.com/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
         private Exception ex;
@@ -13,14 +15,14 @@ namespace STUC
             dota2ToolStripMenuItem.Click += (s, e) =>
             {
                 steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=570&market_hash_name=";
-                marketURL = @"https://market.dota2.net/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
-                label3.Text = "Цена на DotaMarket";
+                marketURL = @$"https://market.dota2.net/api/v2/search-item-by-hash-name?key={API_KEY}&hash_name=";
+                label3.Text = "Price on DotaMarket";
             };
             csToolStripMenuItem.Click += (s, e) =>
             {
                 steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
-                marketURL = @"https://market.csgo.com/api/v2/search-item-by-hash-name?key=622dg9ziVGTl0R4egl8vhUg58SLj3u2&hash_name=";
-                label3.Text = "Цена на CSMarket";
+                marketURL = @$"https://market.csgo.com/api/v2/search-item-by-hash-name?key={API_KEY}&hash_name=";
+                label3.Text = "Price on CSMarket";
             };
             tbItemName.KeyPress += (s, e) =>
             {
@@ -44,10 +46,10 @@ namespace STUC
 
                 steamPrice = Math.Round(steamPrice / 1.15 + 0.01, 2);
                 lblResult.Text = steamPrice.ToString();
-                lblBonus.Text = $"Бонус: {Math.Round(steamPrice - csMarketPrice, 2)}";
+                lblBonus.Text = $"Bonus: {Math.Round(steamPrice - csMarketPrice, 2)}";
                 return;
             }
-            MessageBox.Show("Неккоректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Incorrect input", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             ex = null;
         }
 
