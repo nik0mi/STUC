@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("STUC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53fa32b1e7be32b0cb5a63701cd4faef29ddcf50")]
 [assembly: System.Reflection.AssemblyProductAttribute("STUC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("STUC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
