@@ -12,13 +12,13 @@ namespace STUC
         public MainForm()
         {
             InitializeComponent();
-            dota2ToolStripMenuItem.Click += (s, e) =>
+            tsmiDota2.Click += (s, e) =>
             {
                 steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=570&market_hash_name=";
                 marketURL = @$"https://market.dota2.net/api/v2/search-item-by-hash-name?key={API_KEY}&hash_name=";
                 label3.Text = "Price on DotaMarket";
             };
-            csToolStripMenuItem.Click += (s, e) =>
+            tsmiCS.Click += (s, e) =>
             {
                 steamURL = @"https://steamcommunity.com/market/priceoverview/?&currency=5&appid=730&market_hash_name=";
                 marketURL = @$"https://market.csgo.com/api/v2/search-item-by-hash-name?key={API_KEY}&hash_name=";

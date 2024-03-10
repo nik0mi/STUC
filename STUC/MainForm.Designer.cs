@@ -44,10 +44,9 @@
             lblResult = new Label();
             toolTip = new ToolTip(components);
             menuStrip = new MenuStrip();
-            справкаToolStripMenuItem = new ToolStripMenuItem();
-            сменитьИгруToolStripMenuItem = new ToolStripMenuItem();
-            csToolStripMenuItem = new ToolStripMenuItem();
-            dota2ToolStripMenuItem = new ToolStripMenuItem();
+            tsmiChangeGame = new ToolStripMenuItem();
+            tsmiCS = new ToolStripMenuItem();
+            tsmiDota2 = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -196,7 +195,7 @@
             menuStrip.AutoSize = false;
             menuStrip.BackColor = SystemColors.Control;
             menuStrip.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            menuStrip.Items.AddRange(new ToolStripItem[] { справкаToolStripMenuItem });
+            menuStrip.Items.AddRange(new ToolStripItem[] { tsmiChangeGame });
             menuStrip.LayoutStyle = ToolStripLayoutStyle.Flow;
             menuStrip.Location = new Point(0, 0);
             menuStrip.Name = "menuStrip";
@@ -204,32 +203,25 @@
             menuStrip.TabIndex = 17;
             menuStrip.Text = "menuStrip1";
             // 
-            // справкаToolStripMenuItem
+            // tsmiChangeGame
             // 
-            справкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { сменитьИгруToolStripMenuItem });
-            справкаToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            справкаToolStripMenuItem.Size = new Size(44, 19);
-            справкаToolStripMenuItem.Text = "Help";
+            tsmiChangeGame.DropDownItems.AddRange(new ToolStripItem[] { tsmiCS, tsmiDota2 });
+            tsmiChangeGame.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tsmiChangeGame.Name = "tsmiChangeGame";
+            tsmiChangeGame.Size = new Size(93, 19);
+            tsmiChangeGame.Text = "Change game";
             // 
-            // сменитьИгруToolStripMenuItem
+            // tsmiCS
             // 
-            сменитьИгруToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { csToolStripMenuItem, dota2ToolStripMenuItem });
-            сменитьИгруToolStripMenuItem.Name = "сменитьИгруToolStripMenuItem";
-            сменитьИгруToolStripMenuItem.Size = new Size(148, 22);
-            сменитьИгруToolStripMenuItem.Text = "Change game";
+            tsmiCS.Name = "tsmiCS";
+            tsmiCS.Size = new Size(180, 22);
+            tsmiCS.Text = "CS:GO";
             // 
-            // csToolStripMenuItem
+            // tsmiDota2
             // 
-            csToolStripMenuItem.Name = "csToolStripMenuItem";
-            csToolStripMenuItem.Size = new Size(180, 22);
-            csToolStripMenuItem.Text = "CS";
-            // 
-            // dota2ToolStripMenuItem
-            // 
-            dota2ToolStripMenuItem.Name = "dota2ToolStripMenuItem";
-            dota2ToolStripMenuItem.Size = new Size(180, 22);
-            dota2ToolStripMenuItem.Text = "Dota 2";
+            tsmiDota2.Name = "tsmiDota2";
+            tsmiDota2.Size = new Size(180, 22);
+            tsmiDota2.Text = "Dota 2";
             // 
             // MainForm
             // 
@@ -280,9 +272,8 @@
         private Label lblResult;
         private ToolTip toolTip;
         private MenuStrip menuStrip;
-        private ToolStripMenuItem справкаToolStripMenuItem;
-        private ToolStripMenuItem сменитьИгруToolStripMenuItem;
-        private ToolStripMenuItem csToolStripMenuItem;
-        private ToolStripMenuItem dota2ToolStripMenuItem;
+        private ToolStripMenuItem tsmiChangeGame;
+        private ToolStripMenuItem tsmiCS;
+        private ToolStripMenuItem tsmiDota2;
     }
 }
